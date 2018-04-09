@@ -1,0 +1,70 @@
+{% load static %}	
+	<section class="inner-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 sec-title colored text-center">
+					<h2>Events</h2>
+					<ul class="breadcumb">
+						<li><a href="/">Home</a></li>
+						<li><i class="fa fa-angle-right"></i></li>
+						<li><span>Events List</span></li>
+					</ul>
+					<span class="decor"><span class="inner"></span></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="event-feature sec-padding bg-color-fa pb_60">
+		<div class="container">
+			<div class="row event-feature-inner">
+			    {% for event in events %}
+				<div class="col-sm-12">
+	              <div class="event border-1px">
+	                <div class="row">
+	                  <div class="col-lg-5 col-md-12">
+	                    <div class="event-thumb">
+	                      <div class="thumb">
+	                        <img class="full-width" src="/{{ event.image.url }}" alt="" style="max-height:250px;">
+	                      </div>
+	                      <ul class="event-date">
+	                        <li class="date">{{event.date|date:"D, d" }}</li>
+	                        <li class="month">{{event.date|date:"M, Y" }}</li>
+	                      </ul>
+	                    </div>
+	                  </div>
+	                  <div class="col-lg-7 col-md-12">
+	                    <div class="event-content">
+	                      <h3 class="event-title"><a href="#">{{ event.title }}</a></h3>
+	                      <ul class="event-held list-inline font-13">
+	                        <li><i class="fa fa-clock-o"></i> {{event.date|date:"f:i A" }}</li>
+	                        <li> <i class="fa fa-map-marker"></i> {{ event.venue }}</li>
+	                      </ul>
+	                      <p class="mb_20">{{ event.description }}</p>
+	                      <!--<a class="thm-btn btn-rt btn-xs" href="#">&ensp; join Us &ensp;</a>-->
+                    	  <a class="thm-btn inverse btn-xs" href="detail/{{event.id}}/">Read More</a>
+	                    </div>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>	            
+	            {% endfor %}
+				<div class="col-sm-12">
+					<!--Pagination-->
+					<div class="pager-outer clearfix text-center mt_30 mb_0">
+					    <ul class="pagination mb_0">
+					        <li><a href="#">Prev</a></li>
+					        <li><a href="#">1</a></li>
+					        <li class="active"><a href="#">2</a></li>
+					        <li><a href="#">3</a></li>
+					        <li><a href="#">-</a></li>
+					        <li><a href="#">4</a></li>
+					        <li><a href="#">5</a></li>
+					        <li><a href="#">Next</a></li>
+					    </ul>
+					</div>
+				</div>
+	        </div>
+		</div>
+	</section>

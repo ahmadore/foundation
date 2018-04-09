@@ -1,0 +1,45 @@
+{% load static %}
+<section class="event-feature sec-padding bg-color-fa">
+    <div class="container">
+        <div class="row events-single">
+            <div class="col-sm-12">
+                <div class="border-1px">
+                    <div class="mb_30">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="thumb">
+                                    <img class="full-width" src="/{{ event.image.url }}" alt="" style="height:550px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2">
+                                <div class="event-thumb">
+                                    <ul class="event-date">
+                                        <li class="date">{{event.date|date:"D, d" }}</li>
+                                        <li class="month">{{event.date|date:"M, Y" }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-11 col-md-10">
+                                <div class="event-content">
+                                    <h3 class="event-title"><a href="#">{{ event.title }}</a></h3>
+                                    <ul class="event-held list-inline">
+                                        <li><i class="fa fa-clock-o"></i> {{event.date|date:"f:i A" }}</li>
+                                        <li> <i class="fa fa-map-marker"></i>{{ event.venue }}</li>
+                                    </ul>
+                                    <p>{{ event.description }}</p>
+
+                                    <!--<a class="thm-btn inverse" href="#">join with Us</a>-->
+                                    <!--<a class="thm-btn" href="#">Donate Now</a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

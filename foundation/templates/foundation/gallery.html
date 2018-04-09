@@ -1,0 +1,36 @@
+{% load static %}
+<section class="inner-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 sec-title colored text-center">
+                <h2>Gallery</h2>
+                <ul class="breadcumb">
+                    <li><a href="/">Home</a></li>
+                    <li><i class="fa fa-angle-right"></i></li>
+                    <li><span>{{ title }} Gallery</span></li>
+                </ul>
+                <span class="decor"><span class="inner"></span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section pb_70">
+    <div class="container">
+
+        <div class="clearfix">
+            {% for gallery in pictures %}
+            <!--Image Box-->
+            <div class="image-box">
+                <div class="inner-box">
+                    <figure class="image">
+                        <a href="/{{ gallery.pics.url }}" class="lightbox-image"><img src="/{{ gallery.pics.url }}" alt=""></a>
+                    </figure>
+                    <a href="/{{ gallery.pics.url }}" class="lightbox-image btn-zoom" title="Image Title Here"><span class="icon fa fa-dot-circle-o"></span></a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
