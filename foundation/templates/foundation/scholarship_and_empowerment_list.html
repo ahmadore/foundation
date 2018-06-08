@@ -1,0 +1,58 @@
+<style>
+    caption{
+        text-align: center;
+        font-size: 2em;
+        font-weight: bolder;
+    }
+</style>
+
+<section class="sec-padding meet-Volunteer pb_30">
+    <div class="container-fluid" style="margin:10px 70px 10px 70px;">
+        <div class="row">
+            <table class="table table-hover">
+                <caption>Scholarship List</caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Event</th>
+                        <th>Number of Beneficiaries</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for scholarship in scholarships %}
+                    <tr class="clickable-row" data-href='/scholarships/detail/{{ scholarship.id }}'>
+                        <td>{{ scholarship.title }}</td>
+                        <td> {{ scholarship.event.title }}</td>
+                        <td> {{ scholarship.beneficiaries.count }} </td>
+                        <td> {{ scholarship.event.date }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table class="table table-hover">
+                <caption>Skill Accuisition and Empowerment List</caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Event</th>
+                        <th>Number of Beneficiaries</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for empowerment in empowerments %}
+                    <tr class="clickable-row" data-href='/scholarships/empowerment/detail/{{ empowerment.id }}'>
+                        <td>{{ empowerment.title }}</td>
+                        <td> {{ empowerment.event.title }}</td>
+                        <td> {{ empowerment.beneficiaries.count }} </td>
+                        <td> {{ empowerment.event.date }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </<div>
+</section>

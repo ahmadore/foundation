@@ -1,0 +1,26 @@
+{% extends 'foundation/base.html' %}
+
+{% block title %} Scholarships {% endblock %}
+
+{% block content %}
+
+
+{% include 'foundation/header.html' %}
+{% include 'foundation/nav_bar.html' %}
+
+<!--partial scholarship list goes here-->
+{% include 'foundation/scholarship_and_empowerment_list.html' %}
+<!--partial empowerment list goes here-->
+{% include 'foundation/footer.html' %}
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'foundation/base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+{% include 'foundation/header.html' %}
+{% include 'foundation/nav_bar.html' %}
+<style>
+    caption{
+        text-align: center;
+        font-size: 2em;
+        font-weight: bolder;
+    }
+</style>
+
+<section class="sec-padding meet-Volunteer pb_30">
+    <div class="container-fluid" style="margin:10px 70px 10px 70px;">
+        <div class="row">
+            <table class="table table-hover">
+                <caption>{{ scholarship.title }}</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Scholarship Type</th>
+                        <th>Matric Number</th>
+                        <th>Course</th>
+                        <th>Level</th>
+                        <th>Intitution</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for beneficiary in beneficiaries %}
+                    <tr class="clickable-row">
+                        <td>{{ beneficiary.full_name }}</td>
+                        <td>{{ beneficiary.get_scholarship_type_display }}</td>
+                        <td>{{ beneficiary.matric_number }}</td>
+                        <td>{{ beneficiary.course }}</td>
+                        <td>{{ beneficiary.level }}</td>
+                        <td>{{ beneficiary.institution }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </<div>
+    </div>
+</section>
+
+{% include 'foundation/footer.html' %}
+
+{% endblock %}

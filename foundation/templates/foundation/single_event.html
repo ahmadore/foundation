@@ -30,7 +30,7 @@
                                         <li><i class="fa fa-clock-o"></i> {{event.date|date:"f:i A" }}</li>
                                         <li> <i class="fa fa-map-marker"></i>{{ event.venue }}</li>
                                     </ul>
-                                    <p>{{ event.description }}</p>
+                                    <p>{% autoescape off %} {{ event.description }} {% endautoescape %}</p>
 
                                     <!--<a class="thm-btn inverse" href="#">join with Us</a>-->
                                     <!--<a class="thm-btn" href="#">Donate Now</a>-->

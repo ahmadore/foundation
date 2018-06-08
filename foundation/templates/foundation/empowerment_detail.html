@@ -1,0 +1,48 @@
+{% extends 'foundation/base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+{% include 'foundation/header.html' %}
+{% include 'foundation/nav_bar.html' %}
+<style>
+    caption{
+        text-align: center;
+        font-size: 2em;
+        font-weight: bolder;
+    }
+</style>
+
+<section class="sec-padding meet-Volunteer pb_30">
+    <div class="container-fluid" style="margin:10px 70px 10px 70px;">
+        <div class="row">
+            <table class="table table-hover">
+                <caption>{{ empowerment.title }}</caption>
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Name</th>
+                        <th>ward</th>
+                        <th>Trade</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for beneficiary in beneficiaries %}
+                    <tr class="clickable-row">
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ beneficiary.full_name }}</td>
+                        <td>{{ beneficiary.ward }}</td>
+                        <td>{{ beneficiary.trade }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </<div>
+    </div>
+</section>
+
+{% include 'foundation/footer.html' %}
+
+{% endblock %}

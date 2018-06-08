@@ -3,7 +3,8 @@ from .models import Event, EventGallery
 
 # Create your views here.
 def index(request):
-    events = Event.objects.all()
+    event_type =  request.GET.get('type')
+    events = Event.objects.filter(event_type=event_type)
     return render(request, 'foundation/events.html', {'events': events, 'title':'Events'})
 
 def detail(request, pk):
