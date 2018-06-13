@@ -41,7 +41,7 @@
 	                        <li><i class="fa fa-clock-o"></i> {{event.date|date:"f:i A" }}</li>
 	                        <li> <i class="fa fa-map-marker"></i> {{ event.venue }}</li>
 	                      </ul>
-	                      <p class="mb_20">{{ event.description }}</p>
+	                      <p class="mb_20">{{ event.description|safe }}</p>
 	                      <!--<a class="thm-btn btn-rt btn-xs" href="#">&ensp; join Us &ensp;</a>-->
                     	  <a class="thm-btn inverse btn-xs" href="detail/{{event.id}}/">Read More</a>
 	                    </div>
