@@ -25,5 +25,5 @@ class EventGallery(models.Model):
     pics = models.ImageField(upload_to='img/event')
     description = models.CharField(max_length=50, null=True, blank=True)
     
-    def __str__self(self):
-        return "%s" %self.event.title
+    def __str__(self):
+        return "%s" %self.pics.name
